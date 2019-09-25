@@ -28,48 +28,59 @@ To begin, use Python and SQLAlchemy to do basic climate analysis and data explor
 
   * Plot the results as a histogram with `bins=12`.
 
-    ![station-histogram](https://github.com/ShahzadNaseer/AdvDataStorageHW8/HistMostActiveStation.png)
+  https://github.com/ShahzadNaseer/AdvDataStorageHW8/HistMostActiveStation.png
     
     
+## Step 2 - Climate App
 
-#### Data Modeling
+Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
 
-Table scripts are created after looking the CSVs files and data. Table names are same as CSV file name. Table creation scripts are https://github.com/ShahzadNaseer/SqlHW7/blob/master/TableCreatioScripts.sql
+* Use FLASK to create your routes.
 
-ERD was created using Microsoft Sql Server Management Studio. Here is ERD file https://github.com/ShahzadNaseer/SqlHW7/blob/master/ERD-HW7.jpg
+### Routes
 
-#### Data Engineering
+* `/`
 
-* Tables were created using scripts in Postgres database
+  * Home page.
 
-* Data from CSV files were imported into corresponding SQL table.
+  * List all routes that are available.
 
+* `/api/v1.0/precipitation`
+
+  * Convert the query results to a Dictionary using `date` as the key and `prcp` as the value.
+
+  * Return the JSON representation of your dictionary.
+
+* `/api/v1.0/stations`
+
+  * Return a JSON list of stations from the dataset.
+
+* `/api/v1.0/tobs`
+  * query for the dates and temperature observations from a year from the last data point.
+  * Return a JSON list of Temperature Observations (tobs) for the previous year.
+
+* `/api/v1.0/<start>` and `/api/v1.0/<start>/<end>`
+
+  * Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
+  
 #### Data Analysis
 
-Query file is included to asnwer following questions. Queries are in this file https://github.com/ShahzadNaseer/SqlHW7/blob/master/SqlQueries.sql
+* The following are optional challenge queries. These are highly recommended to attempt, but not required for the homework.
 
-1. List the following details of each employee: employee number, last name, first name, gender, and salary.
+### Temperature Analysis I
 
-2. List employees who were hired in 1986.
+* Hawaii is reputed to enjoy mild weather all year. Is there a meaningful difference between the temperature in, for example, June and December?
 
-3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name, and start and end employment dates.
+### Temperature Analysis II
 
-4. List the department of each employee with the following information: employee number, last name, first name, and department name.
+* The starter notebook contains a function called `calc_temps` that will accept a start date and end date in the format `%Y-%m-%d` and return the minimum, average, and maximum temperatures for that range of dates.
 
-5. List all employees whose first name is "Hercules" and last names begin with "B."
+* Use the `calc_temps` function to calculate the min, avg, and max temperatures for your trip using the matching dates from the previous year (i.e., use "2017-01-01" if your trip start date was "2018-01-01").
 
-6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
 
-7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
+### Daily Rainfall Average
 
-8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
+* Calculate the rainfall per weather station using the previous year's matching dates.
 
-### Bonus
+* Calculate the daily normals. Normals are the averages for the min, avg, and max temperatures.
 
-Draw bar graph in Jupyter Notebook using sqlalchemy and matplotlib. Jupyter Notebook is https://github.com/ShahzadNaseer/SqlHW7/blob/master/AvgSalaryByTitle.ipynb
-
-### Extra Study
-
-Did further analysis of average salaries of Male vs Female. Results of this analysis is worth looking.
-
-![Imgur Image](https://github.com/ShahzadNaseer/SqlHW7/blob/master/GenderAvgSalaryComparison.png)
