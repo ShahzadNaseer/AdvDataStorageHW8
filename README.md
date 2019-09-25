@@ -27,9 +27,9 @@ To begin, use Python and SQLAlchemy to do basic climate analysis and data explor
   * Filter by the station with the highest number of observations.
 
   * Plot the results as a histogram with `bins=12`.
-
-  https://github.com/ShahzadNaseer/AdvDataStorageHW8/HistMostActiveStation.png
-    
+  
+![Imgur Image](https://github.com/ShahzadNaseer/AdvDataStorageHW8/HistMostActiveStation.png)
+  
     
 ## Step 2 - Climate App
 
