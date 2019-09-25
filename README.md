@@ -35,7 +35,7 @@ To begin, use Python and SQLAlchemy to do basic climate analysis and data explor
 
 Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
 
-* Use FLASK to create your routes.
+* Use FLASK to create routes.
 
 ### Routes
 
@@ -63,7 +63,7 @@ Now that you have completed your initial analysis, design a Flask API based on t
 
   * Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
   
-#### Data Analysis
+### Data Analysis
 
 * The following are optional challenge queries. These are highly recommended to attempt, but not required for the homework.
 
